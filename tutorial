@@ -1,0 +1,16 @@
+rails new fomeZero -d postgresql
+
+rails g scaffold Restaurant name:string address:string phone:string
+rails g scaffold Dish description:string price:float time:float
+rails g scaffold Ingredient description:string
+
+rake db:create
+rake db:migrate
+
+rails g migration 
+rails g migration CreateDishesIngredientsJoinTable dishes ingredients && rake db:migrate
+
+rails g migration rename_table :Ingrediente, :Ingredient
+rails g migration AddRestaurant_idToDish restaurant_id:integer
+
+rake db:migrate
