@@ -4,6 +4,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :show, User, :id => user.id
+
+    can :manage, Notice do |notice|
+        notice.new_record? or notice.user == user
+    end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

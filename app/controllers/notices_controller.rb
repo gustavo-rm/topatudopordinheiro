@@ -1,10 +1,12 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: :homepage
+  load_and_authorize_resource :except => [:homepage]
 
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.all.order("created_at desc")
   end
 
   def homepage
@@ -73,6 +75,6 @@ class NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:subject, :text)
+      params.require(:notice).permit(:subject, :text, :user_id)
     end
 end
