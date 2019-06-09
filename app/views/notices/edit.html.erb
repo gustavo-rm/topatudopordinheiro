@@ -1,6 +1,9 @@
-<h1>Editing Notice</h1>
+<div class="text-center">
+	<h1>Editing Notice</h1>
 
-<%= render 'form', notice: @notice %>
+	<%= render 'form', notice: @notice %>
+	<%= link_to 'Show', @notice, :class =>"btn btn-outline-primary" %>
+	<%= link_to 'Back', notices_path, :class =>"btn btn-outline-secondary" %>
+</div>
 
-<%= link_to 'Show', @notice %> |
-<%= link_to 'Back', notices_path %>
+

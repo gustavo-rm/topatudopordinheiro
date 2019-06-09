@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="text-center">
+	<div class="card" style="display: inline-block; width: 25%;">
+	  <h5 class="card-header">Autor: <%= @notice.user.email %></h5>
+	  <div class="card-body">
+	    <h5 class="card-title">Assunto: <%= @notice.subject %></h5>
+	    <p class="card-text"><%= @notice.text %></p>
+	  </div>
+	  <div style="padding-bottom: 1em;">
+	  	<%= link_to 'Edit', edit_notice_path(@notice), :class =>"btn btn-outline-success" %> 
+		<%= link_to 'Back', notices_path, :class =>"btn btn-outline-secondary" %>
+	  </div>
+	</div>
+</div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @notice.subject %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @notice.text %>
-</p>
-
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
-<%= link_to 'Back', notices_path %>

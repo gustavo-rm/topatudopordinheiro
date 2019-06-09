@@ -14,3 +14,5 @@ rails g migration rename_table :Ingrediente, :Ingredient
 rails g migration AddRestaurant_idToDish restaurant_id:integer
 
 rake db:migrate
+
+rails g migration AddUser_idToNotice user_id:integer

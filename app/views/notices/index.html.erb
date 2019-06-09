@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Notices</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Subject</th>
-      <th>Text</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Text</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +13,10 @@
     <% @notices.each do |notice| %>
       <tr>
         <td><%= notice.subject %></td>
-        <td><%= notice.text %></td>
-        <td><%= link_to 'Show', notice %></td>
-        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= resume notice.text %></td>
+        <td><%= link_to 'Show', notice, :class => "btn btn-outline-info" %></td>
+        <td><%= link_to 'Edit', edit_notice_path(notice), :class => "btn btn-outline-dark" %></td>
+        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, :class => "btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Notice', new_notice_path %>
+<%= link_to 'New Notice', new_notice_path, :class =>"btn btn-outline-success" %>

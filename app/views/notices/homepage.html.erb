@@ -1,21 +1,26 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Postagens do Dia</h1>
+  <h1 class="display-4" style="font-weight: bold; font-family: helvetica; text-shadow: 2px 2px 2px #E2987B;">AVISOS</h1>
+<hr/>
+</div>
 </div>
 
 <div class="container">
   <div class="card-deck mb-3 text-center">
     <% @notices.all.each do |notice| %>
-    <div class="card mb-4 shadow-sm">
+    <div class="card mb-3 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Grátis</h4>
+        <h4 class="my-0 font-weight-normal">Autor: <%= notice.user.email %></h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mês</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li><%= notice.subject %></li>
-          <li><%= notice.text %></li>
+        <h1 class="card-title"><%= notice.subject %></h1>
+        <ul class="list-unstyled mt-3 mb-4">          
+          <li style="font-size: 1.3em; text-align: justify;"><%= resume notice.text %></li>
+          <small class="text-muted"><li>Data: <%=notice.created_at %></li></small>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Cadastre-se de graça</button>
+        <div>
+          <%= link_to 'Ver', notice, :class => "btn btn-lg btn-outline-primary button2" %>
+          <%= link_to 'Editar', edit_notice_path(notice), :class =>"btn btn-lg btn-outline-secondary button2" %> 
+        </div>
       </div>
     </div>
     <% end %>
