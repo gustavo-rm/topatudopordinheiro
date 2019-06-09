@@ -40,6 +40,9 @@ gem 'cancancan'
 gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
+gem "paperclip", "~> 6.0.0"
+gem "ckeditor", "~> 4.2.4"
+
 
 
 group :development, :test do

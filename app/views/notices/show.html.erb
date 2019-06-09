@@ -3,7 +3,7 @@
 	  <h5 class="card-header">Autor: <%= @notice.user.email %></h5>
 	  <div class="card-body">
 	    <h5 class="card-title">Assunto: <%= @notice.subject %></h5>
-	    <p class="card-text"><%= @notice.text %></p>
+	    <p class="card-text"><%= raw @notice.text %></p>
 	  </div>
 	  <div style="padding-bottom: 1em;">
 	  	<%= link_to 'Edit', edit_notice_path(@notice), :class =>"btn btn-outline-success" %> 

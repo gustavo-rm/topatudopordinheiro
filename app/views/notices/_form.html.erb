@@ -19,7 +19,7 @@
 
   <div class="field form-group" style="text-align: left;">
     <%= form.label :text %>
-    <%= form.text_field :text, :class => "form-control" %>
+    <%= form.cktext_area :text, :class => "form-control", size: "60x12", ckeditor: { uiColor: '#AADC6E', toolbar: 'mini', language: 'br' } %>
   </div>
 
   <div class="actions">
