@@ -5,6 +5,6 @@ module ApplicationHelper
 		end
 	end
 	def resume(text)
-		truncate(text, length: 300)
+		truncate(raw , length: 300)
 	end
 end

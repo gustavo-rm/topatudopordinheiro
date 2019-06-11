@@ -11,8 +11,22 @@
 
   <body>
   <%= render 'layouts/menu' %>
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
+  <div class="text-center">
+    
+    <% if !alert.nil? %>
+      <p class="alert alert-warning" id="alert"><%= alert %></p>
+    <% else %>
+      <p class="" id="alert"><%= alert %></p>
+    <% end %>
+
+    <% if !notice.nil? %>
+      <p class="alert alert-info" id="notice"><%= notice %></p>
+    <% else %>
+      <p class="" id="notice"><%= notice %></p>
+    <% end %>
+  </div>
+  
     <%= yield %>
   </body>
 </html>
+

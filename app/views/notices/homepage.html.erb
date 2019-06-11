@@ -14,7 +14,7 @@
       <div class="card-body">
         <h1 class="card-title"><%= notice.subject %></h1>
         <ul class="list-unstyled mt-3 mb-4">          
-          <li style="font-size: 1.3em; text-align: justify;"><%= resume raw notice.text %></li>
+          <li style="font-size: 1.3em; text-align: justify;"><%= raw notice.text %></li>
           <small class="text-muted"><li>Data: <%=notice.created_at %></li></small>
         </ul>
         <div>
