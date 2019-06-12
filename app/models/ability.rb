@@ -9,6 +9,15 @@ class Ability
     can :manage, Notice do |notice|
         notice.new_record? or notice.user == user
     end
+
+    #can :manage, Notice do |notice|
+    #    notice.new_record? or
+    #    notice.user_id == nil or
+    #    notice.user.include?(user)
+    #end 
+    #
+    #
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

@@ -6,7 +6,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all.order("created_at desc")
+    @notices = Notice.where(user: current_user).order("created_at desc")
   end
 
   def homepage
